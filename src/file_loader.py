@@ -1,5 +1,3 @@
-# if encrypted then print result in red
-
 from ansi_colors import AnsiColors
 
 class FileLoader():

@@ -1,9 +1,3 @@
-# create a new model object for class employee. generate 6 attributes
-# create a from json as a class function
-# create an instance method(NOT A FUNCTION) that will write employee to a serialized JSON file
-# methods care about state.
-# create a JSON project of my choosing. something that needs interoperability
-
 import json
 
 class Employee():
@@ -15,12 +9,12 @@ class Employee():
         self.employee_number = employee_number
         self.position = position
     
-    def from_json(json_str):
+    def from_json_file(json_str):
         return Employee(json_str['FirstName'], json_str['LastName'], json_str['is_citizen'], json_str['id_number'], json_str['employee_number'], json_str['position'],)
 
-    def to_json(self, employee_file):
-        with open(employee_file, 'w') as e:
-            json.dump(employee_file, e)
+    def to_json_file(self, filename):
+        with open(filename, 'w') as file:
+            json.dump(self.__dict__, file)
 
 class Address():
     def __init__(self, address1, city, state, postal_code):
